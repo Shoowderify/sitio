@@ -1,25 +1,44 @@
-<?php
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form action ="rellenar.php" method="post">
+		Header<br>
+		widht
+		<input type="text" id="a" name="a">
+		ancho	<input type="text" id="b" name="b">
+		
+		titulo	<input type="text" id="c" name="c">
+		
+		<select name="color">
+		<option value="#ccffcc">Verde</option>
+		<option value="#fffccc">Amarillo</option>
+		</select>
+			<br>
+			<br>
+		Mensaje main<br>
+		
+		Mensaje	<input type="text" id="M" name="M">
 
-require('../vendor/autoload.php');
+	
+	<br><br>
+		footer<br>
+		
+		ancho	<input type="text" id="AF" name="AF">
 
-$app = new Silex\Application();
-$app['debug'] = true;
 
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
 
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
+	<input type="submit" value="enviar">
 
-// Our web handlers
+	</form>
 
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
+		<br>
+	
+		
+	modificar:	background, texto, titulo y agregar texto al main. sin div sytle, osea div id class
+	
+	optimizar case
 
-$app->run();
+	</body>
+</html>
